@@ -3,4 +3,23 @@ def position_taken?(board, index)
   !(board[index].nil? || board[index] == " ")
 end
 
+WIN_COMBINATIONS = [[0,1,2], [3,4,5], [6,7,8], [0,3,6], [1,4,7], [2,5,8], [0,4,8], [2,4,6]]
+
 # Define your WIN_COMBINATIONS constant
+def won(board)
+  #
+  if board[WIN_COMBINATIONS[0,1,2]] == "X" 
+    "X won in the top row"
+  #
+  elsif board[WIN_COMBINATIONS[3]] == "X" &&       
+  board[WIN_COMBINATIONS[4]] == "X" &&  
+  board[WIN_COMBINATIONS[5]] == "X"
+    "X won in the middle row"
+  #
+  else  board[WIN_COMBINATIONS[6]] == "X" &&
+    board[WIN_COMBINATIONS[7]] == "X" &&
+    board[WIN_COMBINATIONS[8]] == "X"
+    "X won in the middle row"
+end
+#
+end
